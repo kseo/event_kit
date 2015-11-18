@@ -1,6 +1,6 @@
 # event_kit
 
-This is a simple library for implementing event subscription APIs. This project is inspired by [event-kit].
+This is a simple library for implementing event subscription APIs. This project is inspired by [event-kit][event-kit].
 
 [event-kit]: https://www.npmjs.com/package/event-kit
 
