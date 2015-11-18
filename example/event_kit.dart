@@ -11,10 +11,10 @@ class User {
   String _name = '';
   int _age = 0;
 
-  Disposable onDidNameChange(void handler(String name)) =>
+  Disposable onDidChangeName(void handler(String name)) =>
       _emitter.on('did-change-name', handler);
 
-  Disposable onDidAgeChange(void handler(int oldAge, newAge)) =>
+  Disposable onDidChangeAge(void handler(int oldAge, newAge)) =>
       _emitter.on('did-change-age', handler);
 
   void set name(String name) {
@@ -35,10 +35,10 @@ class User {
 
 main() {
   final user = new User();
-  final userSubscription = user.onDidNameChange((String name) {
+  final userSubscription = user.onDidChangeName((String name) {
     print('name: $name');
   });
-  final ageSubscription = user.onDidAgeChange((int oldAge, int newAge) {
+  final ageSubscription = user.onDidChangeAge((int oldAge, int newAge) {
     print('oldAge: $oldAge, newAge: $newAge');
   });
 

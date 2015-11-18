@@ -14,7 +14,7 @@ class User {
 
   String _name = '';
 
-  Disposable onDidNameChange(void handler(String name)) =>
+  Disposable onDidChangeName(void handler(String name)) =>
       _emitter.on('did-change-name', handler);
 
   void set name(String name) {
