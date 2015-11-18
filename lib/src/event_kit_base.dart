@@ -51,12 +51,10 @@ class Emitter implements Disposable {
           break;
         case 4:
           handler(arguments[0], arguments[1], arguments[2], arguments[3]);
-          handler();
           break;
         case 5:
           handler(arguments[0], arguments[1], arguments[2], arguments[3],
               arguments[4]);
-          handler();
           break;
         default:
           throw new UnsupportedError('exceeded max arguments size');
