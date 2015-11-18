@@ -63,7 +63,7 @@ class Emitter implements Disposable {
     return new Disposable.from(subscription);
   }
 
-  /// Invokes handlers registered via [on] for the given [eventname].
+  /// Invokes handlers registered via [on] for the given [eventName].
   ///
   /// Callbacks will be invoked with [arguments] as arguments.
   void emit(String eventName, [List arguments = const []]) {
