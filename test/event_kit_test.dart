@@ -34,8 +34,73 @@ void main() {
 
       emitter.emit('bar', [6]);
 
-      expect(fooEvents, equals([['a', 1], ['a', 2]]));
-      expect(barEvents, equals([['b', 3], ['b', 5]]));
+      expect(
+          fooEvents,
+          equals([
+            ['a', 1],
+            ['a', 2]
+          ]));
+      expect(
+          barEvents,
+          equals([
+            ['b', 3],
+            ['b', 5]
+          ]));
+    });
+
+    test('invokes subscribers using emit0-event5', () {
+      final arg0Events = [];
+      final arg1Events = [];
+      final arg2Events = [];
+      final arg3Events = [];
+      final arg4Events = [];
+      final arg5Events = [];
+
+      emitter.on('arg0', () => arg0Events.add([]));
+      emitter.on('arg1', (arg1) => arg1Events.add([arg1]));
+      emitter.on('arg2', (arg1, arg2) => arg2Events.add([arg1, arg2]));
+      emitter.on(
+          'arg3', (arg1, arg2, arg3) => arg3Events.add([arg1, arg2, arg3]));
+      emitter.on('arg4',
+          (arg1, arg2, arg3, arg4) => arg4Events.add([arg1, arg2, arg3, arg4]));
+      emitter.on(
+          'arg5',
+          (arg1, arg2, arg3, arg4, arg5) =>
+              arg5Events.add([arg1, arg2, arg3, arg4, arg5]));
+
+      emitter.emit0('arg0');
+      emitter.emit1('arg1', 1);
+      emitter.emit2('arg2', 1, 2);
+      emitter.emit3('arg3', 1, 2, 3);
+      emitter.emit4('arg4', 1, 2, 3, 4);
+      emitter.emit5('arg5', 1, 2, 3, 4, 5);
+
+      expect(arg0Events, equals([[]]));
+      expect(
+          arg1Events,
+          equals([
+            [1]
+          ]));
+      expect(
+          arg2Events,
+          equals([
+            [1, 2]
+          ]));
+      expect(
+          arg3Events,
+          equals([
+            [1, 2, 3]
+          ]));
+      expect(
+          arg4Events,
+          equals([
+            [1, 2, 3, 4]
+          ]));
+      expect(
+          arg5Events,
+          equals([
+            [1, 2, 3, 4, 5]
+          ]));
     });
 
     test('clears all subscribers at once', () {

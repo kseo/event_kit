@@ -70,6 +70,41 @@ class Emitter<K> implements Disposable {
     emitter.add(arguments);
   }
 
+  /// Invokes handlers registered via [on] for the given [eventName].
+  ///
+  /// Callbacks will be invoked with no arguments.
+  void emit0(K eventName) => emit(eventName, []);
+
+  /// Invokes handlers registered via [on] for the given [eventName].
+  ///
+  /// Callbacks will be invoked with [arg1] as arguments.
+  void emit1(K eventName, arg1) => emit(eventName, [arg1]);
+
+  /// Invokes handlers registered via [on] for the given [eventName].
+  ///
+  /// Callbacks will be invoked with [arg1] and [arg2] as arguments.
+  void emit2(K eventName, arg1, arg2) => emit(eventName, [arg1, arg2]);
+
+  /// Invokes handlers registered via [on] for the given [eventName].
+  ///
+  /// Callbacks will be invoked with [arg1], [arg2] and [arg3] as arguments.
+  void emit3(K eventName, arg1, arg2, arg3) =>
+      emit(eventName, [arg1, arg2, arg3]);
+
+  /// Invokes handlers registered via [on] for the given [eventName].
+  ///
+  /// Callbacks will be invoked with [arg1], [arg2], [arg3] and [arg4]
+  /// as arguments.
+  void emit4(K eventName, arg1, arg2, arg3, arg4) =>
+      emit(eventName, [arg1, arg2, arg3, arg4]);
+
+  /// Invokes handlers registered via [on] for the given [eventName].
+  ///
+  /// Callbacks will be invoked with [arg1], [arg2], [arg3], [arg4] and [arg5]
+  /// as arguments.
+  void emit5(K eventName, arg1, arg2, arg3, arg4, arg5) =>
+      emit(eventName, [arg1, arg2, arg3, arg4, arg5]);
+
   /// Clears out any existing subscribers.
   void clear() {
     for (final emitter in _emitterMap.values) {
@@ -84,4 +119,3 @@ class Emitter<K> implements Disposable {
     clear();
   }
 }
-
