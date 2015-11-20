@@ -1,6 +1,6 @@
 name: event_kit
 description: A simple library for implementing event subscription APIs. 
-version: 0.1.1
+version: 0.1.2
 author: Kwang Yul Seo <kwangyul.seo@gmail.com>
 homepage: https://github.com/kseo/event_kit
 
