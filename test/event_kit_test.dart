@@ -8,10 +8,10 @@ import 'package:test/test.dart';
 
 void main() {
   group('Emitter tests', () {
-    Emitter emitter;
+    Emitter<String> emitter;
 
     setUp(() {
-      emitter = new Emitter();
+      emitter = new Emitter<String>();
     });
 
     test('invokes subscribers when the named event is emitted', () {

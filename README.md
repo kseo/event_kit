@@ -10,7 +10,7 @@ This is a simple library for implementing event subscription APIs. This project 
 import 'package:event_kit/event_kit.dart';
 
 class User {
-  final Emitter _emitter = new Emitter();
+  final Emitter<String> _emitter = new Emitter<String>();
 
   String _name = '';
 

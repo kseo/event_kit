@@ -6,7 +6,7 @@ library event_kit.example;
 import 'package:event_kit/event_kit.dart';
 
 class User {
-  final Emitter _emitter = new Emitter();
+  final Emitter<String> _emitter = new Emitter<String>();
 
   String _name = '';
   int _age = 0;
