@@ -105,6 +105,9 @@ class Emitter<K> implements Disposable {
   void emit5(K eventName, arg1, arg2, arg3, arg4, arg5) =>
       emit(eventName, [arg1, arg2, arg3, arg4, arg5]);
 
+  /// Checks if there is any active handler for the given [eventName].
+  bool hasHandler(K eventName) => _getOrCreateEmitter(eventName).hasListener;
+
   /// Clears out any existing subscribers.
   void clear() {
     for (final emitter in _emitterMap.values) {

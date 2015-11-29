@@ -103,6 +103,16 @@ void main() {
           ]));
     });
 
+    test('tests if there is any handler', () {
+      final subscription = emitter.on('active', (_) {});
+
+      expect(emitter.hasHandler('active'), isTrue);
+      expect(emitter.hasHandler('unknown'), isFalse);
+
+      subscription.dispose();
+      expect(emitter.hasHandler('active'), isFalse);
+    });
+
     test('clears all subscribers at once', () {
       final events = [];
 
