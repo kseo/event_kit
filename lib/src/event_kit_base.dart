@@ -106,7 +106,10 @@ class Emitter<K> implements Disposable {
       emit(eventName, [arg1, arg2, arg3, arg4, arg5]);
 
   /// Checks if there is any active handler for the given [eventName].
-  bool hasHandler(K eventName) => _getOrCreateEmitter(eventName).hasListener;
+  bool hasHandler(K eventName) {
+    var emitter = _emitterMap[eventName];
+    return emitter != null && emitter.hasListener;
+  }
 
   /// Clears out any existing subscribers.
   void clear() {
