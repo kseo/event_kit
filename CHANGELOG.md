@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.0
+- Add Emitter.hasHandle method.
+
 ## 0.1.2
 - Make the type of event name generic.
 - Added helper metehods to emit events with specific number of arguments:
