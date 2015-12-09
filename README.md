@@ -2,6 +2,9 @@
 
 This is a simple library for implementing event subscription APIs. This project is inspired by [event-kit][event-kit].
 
+[![Build Status](https://travis-ci.org/kseo/event_kit.svg)](https://travis-ci.org/kseo/event_kit)
+[![Coverage Status](https://coveralls.io/repos/kseo/event_kit/badge.svg?branch=master&service=github)](https://coveralls.io/github/kseo/event_kit?branch=master)
+
 [event-kit]: https://www.npmjs.com/package/event-kit
 
 ## Implementing Event Subscription APIs
